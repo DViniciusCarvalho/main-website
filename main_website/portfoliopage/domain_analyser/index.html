@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel = "stylesheet" href = "style.css">
+  <title></title>
+</head>
+
+<body>
+  <div class = "container">
+    <div class = "subFinder">
+    <h1> Subdomain finder</h1>
+    <div class = "subf_area">
+      <div class = "subf_data" >
+        <input type = "text" class = "subf_url_area" id = "subUrl" placeholder = "ex: http(s)://site.com.br/">
+        </input>
+        <div class = "subf_buttons">
+          <div class = "file_area">
+            <label for = "wordlist_subf" id = "subf_label">
+              wordlist (.txt)
+            </label>
+            <input type = "file" id = "wordlist_subf">
+          </div>
+          <div class = "subf_area_btn">
+            <button id = "subf_find">
+              find
+            </button>
+          </div>
+          <div class = "clear">
+            <button id = "clearSub">
+              clear
+            </button>
+          </div>
+          
+        </div>
+      </div>
+      <pre id = "subf_pre">
+        <p>Blabla</p>
+        <p>Blabla2</p>
+        <p>Blabla3</p>
+      </pre>
+    </div>
+    </div>
+    <div class = "dirFinder">
+      <h1> Directory finder</h1>
+    <div class = "diretf_area">
+      <div class = "diretf_data" >
+        <input type = "text" class = "diretf_url_area" id = "diretUrl" placeholder = "ex: http(s)://site.com.br/">
+        </input>
+        <div class = "diretf_buttons">
+          <div class = "file_area">
+            <label for = "wordlist_diretf" id = "diretf_label">
+              wordlist (.txt)
+            </label>
+            <input type = "file" id = "wordlist_diretf" accept = ".txt">
+          </div>
+          <div class = "diretf_area_btn">
+            <button id = "diretf_find">
+              find
+            </button>
+          </div>
+          <div class = "clear">
+            <button id = "clearDiretf">
+              clear
+            </button>
+          </div>
+        </div>
+      </div>
+      <pre id = "diretf_pre">
+        
+      </pre>
+    </div>
+    </div>
+
+  </div>
+  <script src = "finder.js"></script>
+
+</body>
+
+</html>

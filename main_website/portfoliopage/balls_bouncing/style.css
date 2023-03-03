@@ -1,0 +1,64 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height:100vh;
+    width:100vw;
+    animation: starmoving 10s ease infinite;
+    overflow:hidden;
+}
+
+
+
+div.controls-area{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    border: 1px solid black;
+    height:20%;
+}
+
+div.control{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width:30%;
+    height:80%;
+    border: 1px solid black;
+}
+
+div.quantity-display{
+    border:1px solid black;
+    width:50%;
+    height:30px;
+    text-align: center;
+    padding:5px;
+    margin-top: 5px;
+}
+
+label{
+    margin-bottom:5px;
+}
+
+input[type = 'text']{
+    display:inline-block;
+    text-align:center;
+    height:30px;
+    width:40%;
+    margin-bottom: 5px;
+}
+
+button{
+    padding: 4px 20px;
+    width:40%;
+}
+
+div.balls-area{
+    position:relative;
+    height:80%;
+    width:100%;
+}

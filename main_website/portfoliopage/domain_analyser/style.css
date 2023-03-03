@@ -1,0 +1,145 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+  }
+  
+  body{
+    padding: 50px;
+  }
+  
+  .container{
+    display: block;
+    padding: 20px;
+    width: 924px;
+  }
+  
+  .subf_area, .diretf_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 894px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 0px 0px 5px 5px;
+    background: #a6abb3;
+  }
+  
+  .dirFinder, .subFinder{
+    background: #878d96;
+    width: 894px;
+    border-radius: 10px 10px 5px 5px;
+    border: 1.4px solid black;
+    overflow: hidden;
+  }
+  
+  .dirFinder {
+    margin-top: 40px;
+  }
+  
+  h1{
+    text-align: center;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 1em;
+  }
+  
+  .subf_data, .diretf_data {
+    display: block;
+    width: 340px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    background: #aaadb3;
+  }
+  
+  .subf_url_area, .diretf_url_area {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: inset 1px 1px 6px #76777a ;
+  }
+  
+  input:focus{
+    outline:0
+  }
+  
+  .subf_buttons, .diretf_buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    padding: 0px;
+    margin-top:20px;
+    
+  }
+  
+  
+  .file_area {
+    width: 200px;
+    height: 30px;
+    
+  }
+  
+  .subf_area_btn, .diretf_area_btn, .clear {
+    width: 200px;
+    
+  }
+  
+  #subf_label, #diretf_label{
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    background: #a1a7b3;
+    border: 1px solid dimgray;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #76777a;
+  }
+  
+  #subf_find, #diretf_find, #clearSub, #clearDiretf {
+    width: 200px;
+    height: 30px;
+    margin: 0px;
+    background: #a1a7b3;
+    border: 1px solid dimgray;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #76777a;
+  }
+  
+  #subf_find:hover, #diretf_find:hover, #clearSub:hover, #clearDiretf:hover{
+    background: #33353a;
+  }
+
+  #subf_find, #diretf_find {
+    margin: 2px 0px 2px 0px;
+  }
+  
+  [type = "file"]{
+    height: 0px;
+    display: none;
+  }
+  
+  
+  
+  pre{
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    background: #2b2a36;
+    border-radius: 5px;
+    color: white;
+    overflow-y: auto;
+    overflow-x:wrap;
+    line-height: 7px;
+  }
+  
+  p{
+    margin:0;
+    padding:0;
+  }

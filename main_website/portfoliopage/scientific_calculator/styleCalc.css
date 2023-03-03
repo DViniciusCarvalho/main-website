@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+  
+  body{
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 50px 50px 50px;
+    padding: 40px;
+    border:1.3px solid black;
+    width: 405px;
+    border-radius: 18px;
+  }
+  
+  div #display {
+    display:flex;
+    width: 329px;
+    height: 120px;
+    border: 1.3px solid black;
+    justify-content: right;
+    align-items: center;
+    padding:10px;
+    font-size:1.3em;
+    margin-bottom:-0.5px;
+    border-radius: 18px 18px 0px 0px;
+  }
+  
+  .tecla{
+    width:65px;
+    height: 65px;
+    border:1.3px solid rgb(32, 32, 32);
+    padding-top:20px;
+    text-align: center;
+    background-color: rgb(46, 44, 44);
+    color:white;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin:0.5px;
+  }
+
+  .tecla:hover{
+    cursor:pointer;
+  }
+
+  .number, .ponto{
+    background-color: rgb(54, 53, 53);
+  }
+
+  div .tecla:hover{
+    background-color: rgb(90, 87, 87);
+  }
+  
+  div #teclas {
+    display:flex;
+    flex-wrap: wrap;
+    width: 330px;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .cossec{
+    font-size:0.8em;
+  }
+
+  .log_activated{
+    font-size:0.8em;
+  }
+
+
+  

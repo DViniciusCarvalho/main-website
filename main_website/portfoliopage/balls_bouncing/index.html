@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">    
+    <title>Balls</title>
+</head>
+<body>
+    <div class="controls-area">
+        <div class="quantity-control control">
+            <h2>Total balls:</h2>
+            <div class="quantity-display">0</div>
+        </div>
+        <div class="add-control control">
+            <label for="add-quantity-display" >Quantity to add:</label>
+            <input type ="text" id="add-quantity-display" value = "0"/>
+            <button id = "add-button">ADD</button>
+        </div>
+        <div class="remove-control control">
+            <label for="add-quantity-display" >Quantity to remove:</label>
+            <input type ="text" id="remove-quantity-display" value = "0"/>
+            <button id = "remove-button">REMOVE</button>
+        </div>
+    </div>
+    <div class="balls-area"></div>
+    <script src="ball_control.js"></script>
+</body>
+</html>
