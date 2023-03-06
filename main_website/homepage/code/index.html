@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="main-layout.css">
+    <title>Home</title>
+</head>
+<body>   
+    <div class="overlay"></div>
+    <header class="header">
+        <div class="header__logo"> $_DG</div>
+        <nav class="header__menu">
+            <span class="material-symbols-outlined" id="header__menu--open" >menu</span>
+            <ul class="header__menu__items">
+                <span class="material-symbols-outlined" id="header__menu--close">close</span>
+                <li class="header__menu__item"><a href="index.html">Home</a></li>
+                <li class="header__menu__item"><a href="../../portfoliopage/portfolio.html">Portfolio</a></li>
+                <li class="header__menu__item"><a href="#">Skills</a></li>
+                <li class="header__menu__item"><a href="../../aboutpage/about.html">About</a></li>
+             </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="info-dev">
+            <h2> Hi, I'm</h2>
+            <h1>Douglas Carvalho</h1>
+            <h2>Front-end developer</h2>
+            <div class="text-info">I'm a beginner front-end programmer with knowledge in HTML5, CSS3 and javascript. I'm currently studying my first semester of computer science in Brazil, focusing on cybersecurity and mastering the Front-end as a whole. I'm looking for a remote job.</div>
+            <div class="buttons">
+                <button id="linkedln-btn" onclick="openLinkedln()"> Linkedln</button>
+                <button id="cv-btn" onclick="downloadCV()"> Download CV</button>
+            </div>
+        </div>      
+    </main>      
+    <footer>
+        <p role ="contentinfo">Website made in HTML5, CSS3 and Javascript</p>
+        <div class="lang-icons">
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="home-effects.js"></script>
+</body>
+</html>
