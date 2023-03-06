@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="in this website, Douglas shows his skills doing his personal website">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="main-layout.css">
     <title>Home</title>
@@ -23,24 +24,21 @@
              </ul>
         </nav>
     </header>
-    <main>
-        <div class="info-dev">
-            <h2> Hi, I'm</h2>
-            <h1>Douglas Carvalho</h1>
-            <h2>Front-end developer</h2>
-            <div class="text-info">I'm a beginner front-end programmer with knowledge in HTML5, CSS3 and javascript. I'm currently studying my first semester of computer science in Brazil, focusing on cybersecurity and mastering the Front-end as a whole. I'm looking for a remote job.</div>
-            <div class="buttons">
-                <button id="linkedln-btn" onclick="openLinkedln()"> Linkedln</button>
-                <button id="cv-btn" onclick="downloadCV()"> Download CV</button>
+    <main class="main__info">
+        <div class="main__info__dev">
+            <h2 class="main__info__dev__presentation"> Hi, I'm</h2>
+            <h1 class="main__info__dev__name">Douglas Carvalho</h1>
+            <h2 class="main__info__dev__presentation">Front-end developer</h2>
+            <div class="main__info__dev__text__info">I'm a beginner front-end programmer with knowledge in HTML5, CSS3 and javascript. I'm currently studying my first semester of computer science in Brazil, focusing on cybersecurity and mastering the Front-end as a whole. I'm looking for a remote job.</div>
+            <div class="main__info__dev__professional">
+                <button class="linkedln__button" onclick="openLinkedln()"> Linkedln</button>
+                <button class="download__cv__button" onclick="downloadCV()"> Download CV</button>
             </div>
         </div>      
     </main>      
     <footer>
         <p role ="contentinfo">Website made in HTML5, CSS3 and Javascript</p>
-        <div class="lang-icons">
-        </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="home-effects.js"></script>
 </body>
 </html>

@@ -65,7 +65,7 @@ body{
 .header__menu__item{
     list-style: none;
 }
-nav > ul > li > a{
+.header__menu__item > a{
     display:block;
     height:70px;
     width:170px;
@@ -76,32 +76,32 @@ nav > ul > li > a{
     transition: 1s;
     font-size: 1.1em;
 }
-nav > ul > li > a:hover{
+.header__menu__item > a:hover{
     cursor: pointer;
     color:rgb(255, 166, 0);
     background-color:rgba(179, 177, 177, 0.13);
 }
-main{
+.main__info{
     display:flex;
     align-items: center;
     height:100vh;
 }
-div.info-dev{
+.main__info__dev{
     height:350px;
     margin-left:100px;
 }
-h2{
+.main__info__dev__presentation{
     color:rgb(255, 166, 0);
     font-size:1.6em;
     text-shadow: 2px 2px 15px black;
 }
-h1{
+.main__info__dev__name{
     width:500px;
     font-size: 3.2em;
     text-shadow: 0px 0px 13px black;
     color:white;
 }
-h1::after{
+.main__info__dev__name::after{
     content: '|';
     color:white;
     opacity:1;
@@ -120,19 +120,19 @@ h1::after{
         opacity:1;
     }
 }
-div.text-info{
+.main__info__dev__text__info{
     width:500px;
     margin: 5px auto 30px auto;
     color:rgb(235, 223, 192);
     font-size:1.2em;
     text-shadow: 1px 1px 20px black;
 }
-div.buttons{
+.main__info__dev__professional{
     width:500px;
     height: 45px;
     margin-top:42px;
 }
-button{
+.linkedln__button, .download__cv__button{
     height:45px;
     width:40%;
     padding:7.5px;
@@ -144,12 +144,12 @@ button{
     font-weight:bold;
     transition: 0.4s;
 }
-button:hover{
+.linkedln__button:hover, .download__cv__button:hover{
     background:rgb(180, 124, 19);
     border:3px solid rgb(180, 124, 19);
     cursor:pointer;
 }
-button#cv-btn{
+.download__cv__button{
     margin-left:20px;
 }
 footer{
@@ -169,7 +169,7 @@ footer > p{
     .header__menu__items{
         margin-right:10vw;
     }
-    nav > ul > li > a{
+    .header__menu__item > a{
         width:15vw;
     }
 }
@@ -200,36 +200,36 @@ footer > p{
     #header__menu--close{
         align-self: flex-start;
     }
-    nav > ul > li {
+    .header__menu__item {
         width:100%;
     }
-    nav > ul > li > a{
+    .header__menu__item > a{
         width:100%;
         border-width: 0px 0px 0.000006px 0px;
         border-color: rgb(63, 62, 61);
         border-style:solid;
     }
-    div.info-dev{
+    .main__info__dev{
         width:92vw;
         margin:0px 4vw;
         font-size:0.8em;
     }
-    h1{
+    .main__info__dev__name{
         font-size:2.6em;
     }
-    div.text-info{
+    .main__info__dev__text__info{
         width:100%;
         text-align:justify;
     }
-    div.buttons{
+    .main__info__dev__professional{
         display:flex;
         justify-content:space-between;
         width:100%;
     }
-    button{
+    .linkedln__button, .download__cv__button{
         width:46%;
     }
-    button#cv-btn{
+    .download__cv__button{
         margin:0;
     }
 }

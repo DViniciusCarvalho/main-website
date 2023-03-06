@@ -1,66 +1,66 @@
-const devName = $('h1').eq(0)
-const menuArea = $('.header__menu__items');
-const openMenuButton = $('#header__menu--open');
-const closeMenuButton = $('#header__menu--close');
-const overlayElement = $(".overlay");
+const devName = document.getElementsByClassName('main__info__dev__name')[0];
+const menuArea = document.getElementsByClassName('header__menu__items')[0];
+const openMenuButton = document.getElementById('header__menu--open');
+const closeMenuButton = document.getElementById('header__menu--close');
+const overlayElement = document.getElementsByClassName('overlay')[0];
 
 let closeButtonIsHide = true;
 let windowWidth = window.innerWidth
-let menuWidth = menuArea.width();
+let menuWidth = menuArea.offsetWidth;
 
 // Control of writing effect
 const writeText = (titleContent) => {
-    let characters = $(titleContent.text().split(''));
-    titleContent.text('');
+    let characters = titleContent.innerHTML.split('');
+    titleContent.innerHTML = '';
     setTimeout(() => {     
-        characters.each((index, element) => {
-            setTimeout(() => titleContent.text(titleContent.text() + element), 75 * index);
+        characters.forEach((element, index) => {
+            setTimeout(() => {titleContent.innerHTML += element} , 75 * index);
         });
     }, 1000)   
 }
 writeText(devName);
 
 // Control of mobile menu
-$(window).resize(() => {
+window.addEventListener('resize', () => {
     if(window.innerWidth > 690){
-        closeMenuButton.hide();
-        openMenuButton.hide();
+        closeMenuButton.style.display = 'none';
+        openMenuButton.style.display = 'none';
     }
     if(window.innerWidth <= 690 && window.innerWidth < windowWidth){
-        openMenuButton.css("display", "inline-block");
-        menuArea.css("left", "100%");
+        openMenuButton.style.display = 'inline-block';
+        menuArea.style.left = '100%';
     }
     if(!closeButtonIsHide){
-        openMenuButton.css("display", "inline-block");
-        menuArea.css("left", "100%");
+        openMenuButton.style.display = 'inline-block';
+        menuArea.style.left = '100%';
     }
     windowWidth = window.innerWidth
-    menuWidth = menuArea.width();
+    menuWidth = menuArea.offsetWidth;
     closeButtonIsHide = true; 
 });
 
 document.addEventListener('touchmove', (event) => {
-    !closeButtonIsHide? event.preventDefault():"";
+    !closeButtonIsHide? event.preventDefault():'';
 }, { passive: false });
 
 document.addEventListener('wheel', (event) => {
-    !closeButtonIsHide? event.preventDefault():"";
+    !closeButtonIsHide? event.preventDefault():'';
 }, { passive: false });
 
-openMenuButton.click(() => { 
-    menuWidth = menuArea.width()
-    openMenuButton.hide();          
-    closeMenuButton.css("display", "inline-block");
-    overlayElement.addClass("overlay--active");
-    menuArea.css({left:`${windowWidth - menuWidth}px`});
+openMenuButton.addEventListener('click', () => { 
+    menuWidth = menuArea.offsetWidth;
+    openMenuButton.style.display = 'none';          
+    closeMenuButton.style.display = 'inline-block';
+    overlayElement.classList.add('overlay--active');
+    menuArea.style.left = `${windowWidth - menuWidth}px`;
     closeButtonIsHide = false;
 });
 
-closeMenuButton.click(() => {
-    menuArea.css("left", "100%");
+closeMenuButton.addEventListener('click', () => {
+    menuArea.style.left = '100%';
     setTimeout(() => {       
-        openMenuButton.css("display", "inline-block");
-        overlayElement.removeClass("overlay--active");
+        openMenuButton.style.display = 'inline-block';
+        overlayElement.classList.remove('overlay--active');
         closeButtonIsHide = true;
     }, 300)
 });
@@ -71,10 +71,10 @@ const openLinkedln = () => {
 }
 
 const downloadCV = () => {
-    const filePath = "../files/exemplo.txt";
-    const link = document.createElement("a");
+    const filePath = '../files/exemplo.txt';
+    const link = document.createElement('a');
     link.href = filePath;
-    link.download = "exemplo.txt";   
+    link.download = 'exemplo.txt';   
     link.click();
   }
 
