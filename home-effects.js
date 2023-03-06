@@ -71,7 +71,7 @@ const openLinkedln = () => {
 }
 
 const downloadCV = () => {
-    const filePath = '../files/exemplo.txt';
+    const filePath = 'homepage-file/exemplo.txt';
     const link = document.createElement('a');
     link.href = filePath;
     link.download = 'exemplo.txt';   

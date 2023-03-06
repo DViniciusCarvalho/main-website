@@ -9,7 +9,7 @@ body{
     height:100vh;
     overflow-x: hidden;
     height:550px;
-    background: url('../imgs/pexels-pixabay-220201.jpg');
+    background: url('homepage-img/pexels-pixabay-220201.jpg');
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;
