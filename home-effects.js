@@ -3,7 +3,9 @@ const menuArea = document.getElementsByClassName('header__menu__items')[0];
 const openMenuButton = document.getElementById('header__menu--open');
 const closeMenuButton = document.getElementById('header__menu--close');
 const overlayElement = document.getElementsByClassName('overlay')[0];
+const nav = document.getElementsByClassName('header__menu')[0];
 
+console.log('aq')
 let closeButtonIsHide = true;
 let windowWidth = window.innerWidth
 let menuWidth = menuArea.offsetWidth;
@@ -49,9 +51,10 @@ document.addEventListener('wheel', (event) => {
 
 openMenuButton.addEventListener('click', () => { 
     menuWidth = menuArea.offsetWidth;
-    openMenuButton.style.display = 'none';          
+    windowWidth = window.innerWidth;
+    openMenuButton.style.display = 'none'; 
     closeMenuButton.style.display = 'inline-block';
-    overlayElement.classList.add('overlay--active');
+    menuArea.style.left = (windowWidth - menuWidth >= screen.width)?`${screen.width - menuWidth}px`:
     menuArea.style.left = `${windowWidth - menuWidth}px`;
     closeButtonIsHide = false;
 });
@@ -60,7 +63,6 @@ closeMenuButton.addEventListener('click', () => {
     menuArea.style.left = '100%';
     setTimeout(() => {       
         openMenuButton.style.display = 'inline-block';
-        overlayElement.classList.remove('overlay--active');
         closeButtonIsHide = true;
     }, 300)
 });
