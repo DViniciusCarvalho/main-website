@@ -1,5 +1,5 @@
 const menuButton = document.getElementsByClassName('header__menu__button')[0];
-const menuElements = document.getElementsByClassName('header__menu')[0];
+const menuContainer = document.getElementsByClassName('header__menu')[0];
 const devName = document.getElementsByClassName('main__info__dev__name')[0];
 const linkedlnButton = document.getElementsByClassName('linkedln__button')[0];
 const downloadCVButton = document.getElementsByClassName('download__cv__button')[0];
@@ -20,11 +20,11 @@ writeText(devName);
 // --> Control of the menu.
 // Open and close the menu.
 menuButton.addEventListener('click', () => {
-    menuElements.classList.toggle('active');
+    menuContainer.classList.toggle('active');
 })
 // On resize, close the menu if it's openned.
 window.addEventListener('resize', () => {
-    if(menuElements.classList.contains('active')){
+    if(menuContainer.classList.contains('active')){
         menuButton.click();
     }
 });
