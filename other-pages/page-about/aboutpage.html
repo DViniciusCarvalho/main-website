@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__logo"> $_DG</div>
+        <h1 class="header__logo"> $_DG</h1>
         <nav class="header__menu">
             <button class="header__menu__button" aria-label="Menu button">
                 <div class="button__line top__line"></div>
@@ -26,15 +26,35 @@
              </ul>
         </nav>
     </header>
-    <main>
-        <article class="dev-info" role = 'article'>
-            <!-- <section class="info-text"></section> -->
-            <section class="info-block"></section>
-            <section class="info-block"></section>
-            <section class="info-block"></section>
-        </article>
+    <main class="main__content__area">
+        <div class="container__main__content">
+            <article class="main__content__about__information">
+                <section class="content__block">
+                    <img src="aboutpage-img/computer.png" alt="" class="content__icon">
+                    <h2 class="content__title">Formação acadêmica</h2>
+                    <h3 class="content__second__title">Técnico em mecatrônica</h3>
+                    <p class="content__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil recusandae, obcaecati nemo perspiciatis eveniet saepe ipsum. Ab amet molestiae illo totam corporis qui, provident repellat nesciunt quo quis quisquam reiciendis? </p>
+                </section>
+                <section class="content__block">
+                    <img src="aboutpage-img/computer.png" alt="" class="content__icon">
+                    <h2 class="content__title">Cursando</h2>
+                    <h3 class="content__second__title">Ciência da computação</h3>
+                    <p class="content__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil recusandae, obcaecati nemo perspiciatis eveniet saepe ipsum. Ab amet molestiae illo totam corporis qui, provident repellat nesciunt quo quis quisquam reiciendis? </p>
+                </section>
+                <section class="content__block">
+                    <img src="aboutpage-img/computer.png" alt="" class="content__icon">
+                    <h2 class="content__title">Viciado em aprender</h2>
+                    <h3 class="content__second__title"></h3>
+                    <p class="content__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil recusandae, obcaecati nemo perspiciatis eveniet saepe ipsum. Ab amet molestiae illo totam corporis qui, provident repellat nesciunt quo quis quisquam reiciendis? </p>
+                </section>
+            </article>
+            <address class="contact__email">
+                <!-- <a href="mailto:douglasscarrvalho@gmail.com">douglasscarrvalho@gmail.com</a> -->
+            </address>
+        </div>
     </main>      
-    <footer>
+    <footer class="footer">
+        <p class="website__information" role ="contentinfo">Website made in HTML5, CSS3 and Javascript</p>
     </footer>
     <script src="aboutpage_effects.js" type="module"></script>
 </body>

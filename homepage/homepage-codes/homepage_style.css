@@ -76,18 +76,6 @@
 .download__cv__button{
     margin-left:20px;
 }
-.footer{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:70px;
-    background-color: rgb(255, 250, 250);
-}
-.website__information{
-    color:rgb(32, 32, 32);
-    font-weight:700;
-}
 
 /* Mobile */
 @media only screen and (max-width:672px){
