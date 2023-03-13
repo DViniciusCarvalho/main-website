@@ -4,8 +4,6 @@ const targetsToFade = document.querySelectorAll('[data-anime]');
 const menuButton = document.getElementsByClassName('header__menu__button')[0];
 const menuContainer = document.getElementsByClassName('header__menu')[0];
 
-let closeButtonIsHide = true
-
 // Fade items by scroll
 const animateByScroll = () => {
     const windowHeight = window.innerHeight;
@@ -41,17 +39,17 @@ window.addEventListener('scroll', debounce(() => {
 
 // Control of menu
 menuButton.addEventListener('click', () => {
-    menuControl.openAndCloseMenu(menuContainer, closeButtonIsHide)
+    menuControl.openAndCloseMenu(menuContainer)
 });
 
 document.addEventListener('touchmove', (event) => {
-    menuControl.blockTouchMoveOnMenuOpen(event, closeButtonIsHide);
+    menuControl.blockTouchMoveOnMenuOpen(event);
 }, { passive: false });
         
 document.addEventListener('wheel', (event) => {
-    menuControl.blockScrollOnMenuOpen(event, closeButtonIsHide);
+    menuControl.blockScrollOnMenuOpen(event);
 }, { passive: false });
 
 window.addEventListener('resize', () => {
-    menuControl.closeMenuOnResize(menuContainer, menuButton, closeButtonIsHide);
+    menuControl.closeMenuOnResize(menuContainer, menuButton);
 });

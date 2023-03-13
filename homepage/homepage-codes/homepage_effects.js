@@ -7,14 +7,10 @@ const devName = document.getElementsByClassName("main__info__dev__name")[0];
 const linkedlnButton = document.getElementsByClassName("linkedln__button")[0];
 const downloadCVButton = document.getElementsByClassName("download__cv__button")[0];
 
-let closeButtonIsHide = true
-
-
 // Control of main content opacity.
 window.addEventListener('load', () => {
     mainContent.classList.add('loaded');
-})
-
+});
 
 // Control of writing effect. 
 const writeText = (titleContent) => {
@@ -27,7 +23,6 @@ const writeText = (titleContent) => {
     }, 1500)   
 }
 writeText(devName);
-
 
 // Control of menu
 menuButton.addEventListener('click', () => {
@@ -46,12 +41,10 @@ window.addEventListener('resize', () => {
     menuControl.closeMenuOnResize(menuContainer, menuButton);
 });
    
-
 // Open a new window on the client navigator to Douglas's Linkedln
 linkedlnButton.addEventListener("click", () => {
     window.open("https://www.linkedin.com/in/douglas-carvalho-7b97b2266/", "_blank");
 });
-
 
 // Download Douglas"s Curriculum Vitae (CV)
 downloadCVButton.addEventListener("click", () => {

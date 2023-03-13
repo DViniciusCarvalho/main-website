@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/* Main content */
 .main__content__area{
     display:flex;
     justify-content: center;
@@ -7,21 +8,24 @@
     height:100vh;
     width:100%;
 }
-
 .main__content__about__information{
+    opacity: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2%;
-    width: 60%;
+    width: 70%;
     height: 50%;
     border: 0.5px solid rgba(17, 17, 17, 0.774);
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.493);
     border-radius: 20px;
     background-color:rgba(48, 45, 45, 0.74);
+    transition: opacity 2s;
 }
-
+.main__content__about__information.loaded{
+    opacity: 1;
+}
 .content__block{
     display:flex;
     flex-direction: column;
@@ -36,10 +40,9 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.349);
     border-radius: 12px;
     font-family: 'Roboto', sans-serif;
-    padding:13px;
+    padding:0px 13px 13px 13px;
     transition: transform .3s, background-color .3s;
 }
-
 .icon-area{
     display: block;
     opacity: 1;
@@ -51,21 +54,21 @@
     border-radius: 50%;
     background-color: rgb(240, 173, 29);
     box-shadow: 0px 0px 10px rgb(255, 170, 0);
-    transition: background-color .3s, box-shadow 1s, opacity .3s;
+    transform: translateY(-30px);
+    transition: background-color .3s, box-shadow 1s, opacity .3s, transform 3s;
 }
-
-
+.main__content__about__information.loaded .icon-area {
+    transform: translateY(0px);
+}
 .content__block:hover {
     background: rgb(70, 69, 69);
     transform: scale(1.01);
     cursor: pointer;
 }
-
 .content__block:hover .icon-area{
     background-color: rgb(255, 196, 67);
     box-shadow: 0px 0px 20px rgb(255, 170, 0);
 }
-
 .content__title{
     text-align: center;
     opacity: 1;
@@ -73,7 +76,6 @@
     color: rgb(219, 214, 214);
     font-family: 'Roboto', sans-serif;
 }
-
 .content__second__title{
     text-align: center;
     overflow: hidden;
@@ -83,57 +85,71 @@
     transition: 1s;
     font-family: 'Roboto', sans-serif;
 }
-
 .content__text{
     overflow: hidden;
     height: 0;
     opacity: 0;
     text-align: justify;
     text-justify: inter-word;
-    text-indent: 22px;
     line-height: 1.3em;
     color: rgb(216, 214, 214);
     font-weight: 500;
     transition: 1s;
     font-family: 'Roboto', sans-serif;
 }
-
 .content__icon{
     width: 60px;
 }
-
 .content__block.active .content__title, .content__block.active .content__icon, .content__block.active .icon-area{
     overflow: hidden;
     height: 0;
     opacity: 0;
 }
-
 .content__block.active .content__text, .content__block.active .content__second__title{
     height: auto;
     opacity: 1;
 }
 
-[data-anime]{
-    opacity:0;
-    transition: 0.3s;
-}
-
-[data-anime = 'left']{
-    transform: translate3d(-50px, 0,0);
-}
-
-[data-anime = 'right']{
-    transform: translate3d(50px, 0,0);
-}
-
-[data-anime].animate{
-    opacity:1;
-    transform: translate3d(0,0,0);
+@media only screen and (max-width:1222px) and (min-width:776px){
+    .main__content__about__information {
+        width: 90%;
+    }
 }
 
 /* Mobile */
-@media only screen and (max-width:672px){
-
+@media only screen and (max-width:775px) and (min-width:673px){
     /* Main content mobile */
+    .main__content__area {
+        height: 140vh;
+    }
+    .main__content__about__information {
+        flex-direction: column;
+        width: 60%;
+        height: 90%;
+    }
+    .content__block {
+        height: 30%;
+        width: 80%;
+    }
+}
 
+@media only screen and (max-width: 672px){
+    .main__content__about__information {
+        flex-direction: column;
+        width: 90%;
+        height: 90%;
+    }
+    .content__block {
+        height: 30%;
+        width: 80%;
+    }
+    .content__text {
+        font-size: 0.8em;
+    }
+    .content__block {
+        padding:0px;
+    }
+    .content__block.active {
+        padding:0px 13px 13px 13px;
+    }
 }

@@ -104,10 +104,9 @@
         margin-left:5%;
     }
     .main__info__dev__text__info{
-        font-size: 1.6em;
+        font-size: 1.4em;
         font-weight: 500;
     }
-
 }
 
 /* Mobile */
@@ -137,6 +136,7 @@
     }
     .main__info__dev__text__info{
         width:100%;
+        font-size: 1.1em;
         text-align:justify;
     }
     .main__info__dev__professional{
@@ -151,6 +151,6 @@
         margin:0;
     }
     .website__information{
-        font-size:0.8em;
+        font-size:0.9em;
     }
 }
