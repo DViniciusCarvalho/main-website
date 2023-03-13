@@ -1,15 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .main__content__area{
     display:flex;
     justify-content: center;
     align-items: center;
     height:100vh;
     width:100%;
-}
-.container__main__content{
-    width: 60%;
-    height: 60%;
-    border-radius: 20px;
-    border: 0.5px solid white;
 }
 
 .main__content__about__information{
@@ -18,10 +14,11 @@
     justify-content: center;
     align-items: center;
     gap: 2%;
-    height: 85%;
-    width: 100%;
-    border: 0.5px solid white;
-    border-radius: 20px 20px 0px 0px;
+    width: 60%;
+    height: 50%;
+    border: 0.5px solid rgba(17, 17, 17, 0.774);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.493);
+    border-radius: 20px;
     background-color:rgba(48, 45, 45, 0.74);
 }
 
@@ -33,42 +30,79 @@
     gap: 13px;
     width:30%;
     height: 80%;
-    background-color:rgb(199, 192, 192);
-    border: 0.5px solid white;
+    background-color:rgb(59, 58, 58);
+    color: white;
+    border: 0.5px solid rgb(34, 31, 31);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.349);
     border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
     padding:13px;
+    transition: transform .3s, background-color .3s;
+}
+
+.icon-area{
+    display: block;
+    opacity: 1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    background-color: rgb(240, 173, 29);
+    box-shadow: 0px 0px 10px rgb(255, 170, 0);
+    transition: background-color .3s, box-shadow 1s, opacity .3s;
+}
+
+
+.content__block:hover {
+    background: rgb(70, 69, 69);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.content__block:hover .icon-area{
+    background-color: rgb(255, 196, 67);
+    box-shadow: 0px 0px 20px rgb(255, 170, 0);
 }
 
 .content__title{
     text-align: center;
-    font-size: 1.4em;
     opacity: 1;
     transition: 1s;
+    color: rgb(219, 214, 214);
+    font-family: 'Roboto', sans-serif;
 }
+
 .content__second__title{
     text-align: center;
     overflow: hidden;
+    color:rgb(240, 173, 29);
     height: 0;
     opacity: 0;
     transition: 1s;
+    font-family: 'Roboto', sans-serif;
 }
+
 .content__text{
     overflow: hidden;
     height: 0;
     opacity: 0;
     text-align: justify;
+    text-justify: inter-word;
     text-indent: 22px;
     line-height: 1.3em;
-    color: rgb(0, 0, 0);
+    color: rgb(216, 214, 214);
     font-weight: 500;
     transition: 1s;
+    font-family: 'Roboto', sans-serif;
 }
 
-.content__block:hover{
-    cursor: pointer;
+.content__icon{
+    width: 60px;
 }
 
-.content__block.active .content__title, .content__block.active .content__icon{
+.content__block.active .content__title, .content__block.active .content__icon, .content__block.active .icon-area{
     overflow: hidden;
     height: 0;
     opacity: 0;
@@ -77,12 +111,6 @@
 .content__block.active .content__text, .content__block.active .content__second__title{
     height: auto;
     opacity: 1;
-}
-
-.contact__email{
-    width:100%;
-    height: 15%;
-    border-radius: 0px 0px 20px 20px;
 }
 
 [data-anime]{

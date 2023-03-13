@@ -31,19 +31,19 @@ writeText(devName);
 
 // Control of menu
 menuButton.addEventListener('click', () => {
-    menuControl.openAndCloseMenu(menuContainer, closeButtonIsHide)
+    menuControl.openAndCloseMenu(menuContainer)
 });
 
 document.addEventListener('touchmove', (event) => {
-    menuControl.blockTouchMoveOnMenuOpen(event, closeButtonIsHide);
+    menuControl.blockTouchMoveOnMenuOpen(event);
 }, { passive: false });
         
 document.addEventListener('wheel', (event) => {
-    menuControl.blockScrollOnMenuOpen(event, closeButtonIsHide);
+    menuControl.blockScrollOnMenuOpen(event);
 }, { passive: false });
 
 window.addEventListener('resize', () => {
-    menuControl.closeMenuOnResize(menuContainer, menuButton, closeButtonIsHide);
+    menuControl.closeMenuOnResize(menuContainer, menuButton);
 });
    
 
