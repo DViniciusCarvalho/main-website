@@ -26,6 +26,7 @@
     display: none;
     background-color: transparent;
     border:none;
+    border-radius: 50%;
     transition: .5s;
 }
 .button__line{
