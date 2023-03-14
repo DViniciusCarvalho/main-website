@@ -94,6 +94,7 @@
 @media only screen and (max-width:1222px) and (min-width:929px){
     body {
         background: url('../../common-style-configs/common-style-background/pexels-pixabay-220201.jpg');
+        background-attachment: fixed;
     }
     .main__info{
         background-image: none;
@@ -104,9 +105,11 @@
         margin-left:5%;
     }
     .main__info__dev__text__info{
-        font-size: 1.4em;
+        font-size: 1.5em;
+        text-shadow: 0px 0px 15px black;
         font-weight: 500;
     }
+    
 }
 
 /* Mobile */
@@ -120,6 +123,7 @@
         background: url('../../common-style-configs/common-style-background/pexels-pixabay-220201.jpg');
         background-color: #282a2c; 
         background-size: cover;
+        background-attachment: fixed;
     }
     /* Main content mobile */
     .main__info{
@@ -136,7 +140,8 @@
     }
     .main__info__dev__text__info{
         width:100%;
-        font-size: 1.1em;
+        font-size: 1.3em;
+        text-shadow: 0px 0px 15px black;
         text-align:justify;
     }
     .main__info__dev__professional{

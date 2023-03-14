@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 /* Main content */
-.main__content__area{
+.main__content__area {
     display:flex;
     justify-content: center;
     align-items: center;
-    height:100vh;
     width:100%;
+    height: 100vh;
 }
-.main__content__about__information{
+.main__content__about__information, .main__content__skills__information{
     opacity: 0;
     display: flex;
     flex-direction: row;
@@ -16,14 +16,17 @@
     align-items: center;
     gap: 2%;
     width: 70%;
-    height: 50%;
+    height: 60%;
+    padding: 20px;
     border: 0.5px solid rgba(17, 17, 17, 0.774);
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.493);
-    border-radius: 20px;
     background-color:rgba(48, 45, 45, 0.74);
     transition: opacity 2s;
 }
-.main__content__about__information.loaded{
+.main__content__skills__information {
+    width: 90%;
+}
+.main__content__about__information.loaded, .main__content__skills__information.loaded{
     opacity: 1;
 }
 .content__block{
@@ -43,6 +46,14 @@
     padding:0px 13px 13px 13px;
     transition: transform .3s, background-color .3s;
 }
+.main__content__about__information > .content__block {
+    width:30%;
+    height: 80%;
+}
+.main__content__skills__information > .content__block {
+    width:20%;
+    height: 80%;
+}
 .icon-area{
     display: block;
     opacity: 1;
@@ -57,7 +68,7 @@
     transform: translateY(-30px);
     transition: background-color .3s, box-shadow 1s, opacity .3s, transform 3s;
 }
-.main__content__about__information.loaded .icon-area {
+.main__content__about__information.loaded .icon-area,.main__content__skills__information.loaded .icon-area  {
     transform: translateY(0px);
 }
 .content__block:hover {
@@ -83,6 +94,7 @@
     height: 0;
     opacity: 0;
     transition: 1s;
+    font-size: 1.4em;
     font-family: 'Roboto', sans-serif;
 }
 .content__text{
@@ -94,11 +106,12 @@
     line-height: 1.3em;
     color: rgb(216, 214, 214);
     font-weight: 500;
+    font-size: 1.2em;
     transition: 1s;
     font-family: 'Roboto', sans-serif;
 }
-.content__icon{
-    width: 60px;
+.main__content__skills__information > .content__block {
+    font-size: 0.9em;
 }
 .content__block.active .content__title, .content__block.active .content__icon, .content__block.active .icon-area{
     overflow: hidden;
@@ -111,45 +124,95 @@
 }
 
 @media only screen and (max-width:1222px) and (min-width:776px){
-    .main__content__about__information {
-        width: 90%;
+    .main__content__about__information, .main__content__skills__information  {
+        width: 95%;
+    }
+    .main__content__skills__information{
+        padding: 26px;
+        gap: 8px;
+        flex-wrap: wrap;
+        height: 85%;
+    }
+    .main__content__skills__information > .content__block {
+        height: 50%;
+        width: 32%;
+    }
+    .main__content__skills__information > .content__block > .content__text {
+        font-size: 1.1em;
+    }
+    .main__content__area.skills{
+        height: 100vh;
     }
 }
 
 /* Mobile */
 @media only screen and (max-width:775px) and (min-width:673px){
     /* Main content mobile */
-    .main__content__area {
+    .main__content__area.about {
         height: 140vh;
     }
-    .main__content__about__information {
-        flex-direction: column;
-        width: 60%;
-        height: 90%;
+    .main__content__area.skills {
+        height: 100%;
     }
-    .content__block {
+    .main__content__about__information, .main__content__skills__information  {
+        flex-direction: column;
+        width: 90%;
+        height: 1024px;
+        padding: 20px;
+        margin: 40px auto;
+        gap: 5px;
+    }
+    .main__content__skills__information {
+        height: 1024px;
+    }
+    .main__content__about__information > .content__block {
         height: 30%;
         width: 80%;
+    }
+    .main__content__skills__information > .content__block {
+        width: 80%;
+        height: 20%;
+        padding: 12px;
     }
 }
 
 @media only screen and (max-width: 672px){
-    .main__content__about__information {
-        flex-direction: column;
-        width: 90%;
-        height: 90%;
+    .main__content__area.about {
+        height: 140vh;
     }
-    .content__block {
+    .main__content__area.skills {
+        height: 1600px;
+    }
+    .main__content__about__information, .main__content__skills__information  {
+        flex-direction: column;
+        width: 96%;
+        height: 80%;
+        padding: 20px 0px;
+        margin: 40px auto;
+        gap: 5px;
+    }
+    .main__content__skills__information {
+        height: 1400px;
+    }
+    .main__content__about__information > .content__block {
         height: 30%;
         width: 80%;
     }
-    .content__text {
-        font-size: 0.8em;
+    .main__content__skills__information > .content__block {
+        width: 80%;
+        height: 20%;
+        padding: 20px;
     }
     .content__block {
-        padding:0px;
+        padding:0px 13px 13px 13px;
     }
     .content__block.active {
-        padding:0px 13px 13px 13px;
+        padding: 0px 13px;
+    }
+    .content__block.active .content__text {
+        font-size: 1em;
+    }
+    .main__content__skills__information > .content__block.active {
+        padding: 18px;
     }
 }

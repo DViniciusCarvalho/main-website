@@ -7,9 +7,9 @@ const menuContainer = document.getElementsByClassName('header__menu')[0];
 // Fade items by scroll
 const animateByScroll = () => {
     const windowHeight = window.innerHeight;
-    const window_Y_distance = window.pageYOffset + windowHeight * 0.75;
+    const windowYdistance = window.pageYOffset + windowHeight * 0.75;
     targetsToFade.forEach((element) => {
-        if(window_Y_distance > element.offsetTop){
+        if(windowYdistance > element.offsetTop){
             element.classList.add('animate')
         }
         else{
