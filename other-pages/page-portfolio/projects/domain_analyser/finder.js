@@ -1,121 +1,66 @@
-// Referência às inputs de URL
-const urlSd = document.getElementById('subUrl')
-const urlDr = document.getElementById('diretUrl')
+const urlSd = document.getElementById('subUrl');
+const urlDr = document.getElementById('diretUrl');
+const wordlistSd = document.getElementById('wordlist_subf');
+const wordlistDrt = document.getElementById('wordlist_diretf');
+const findSd = document.getElementById('subf_find');
+const findDrt = document.getElementById('diretf_find');
+const clearSd = document.getElementById('clearSub');
+const clearDrt = document.getElementById('clearDiretf');
+const subDisplay = document.getElementById('subf_pre');
+const diretfDisplay = document.getAnimations('diretf_pre');
 
-// Referência às inputs de arquivo .txt
-const wordlistSd = document.getElementById('wordlist_subf')
-const wordlistDrt = document.getElementById('wordlist_diretf')
+let http = 'http://';
+let https = 'https://';
+let finalUrl;
 
-// Referência aos botões de find
-const findSd = document.getElementById('subf_find')
-const findDrt = document.getElementById('diretf_find')
+function isValidURL(){
+  return finalUrl.includes('http://') || finalUrl.includes('https://')?
+    true : false
+}
 
-// Referência aos botões de limpeza de tela
-const clearSd = document.getElementById('clearSub')
-const clearDrt = document.getElementById('clearDiretf')
-
-// Referência às telas de resultados
-const subDisplay = document.getElementById('subf_pre')
-const diretfDisplay = document.getAnimations('diretf_pre')
-
-// Protocolos da URL
-let http = 'http://'
-let https = 'https://'
-let finalUrl
-
-// Limpa tela do buscador de subdominios 
-clearSd.addEventListener('click', () => {
-  subDisplay.innerHTML = ''
-})
-
-// Limpa tela do buscador de diretórios
-clearDrt.addEventListener('click', () => {
-  diretfDisplay.innerHTML = ''
-})
-
-// Inicia a busca de subdomínios
-findSd.addEventListener('click', () => {
-  if (wordlistSd.files.length == 0){
-    alert('You must select an wordlist')
-  }
-  else {
-    let url = urlSd.value
-    let request = new XMLHttpRequest()
-    let reader = new FileReader()
-    reader.readAsText(wordlistSd.files[0])
-    reader.onload = () => {
-      let words = reader.result.split(' ')
-      for (let word of words){
-        try {
-          finalUrl = buildUrlSub(url, word)
-          if(finalUrl.includes('http://') || finalUrl.includes('https://')){
-            request.open('GET', finalUrl,true)
-            request.onreadystatechange=() => {
-              if(request.status == 200){
-                let subDomainFound = document.createElement('p')
-                subDomainFound.innerText = finalUrl
-                subDisplay.appendChild(subDomainFound)
-              }
-            }
-            request.send()
-          }
-          else{
-            throw new Error ('URL inválida')
-          }
-        }
-        catch(error){
-          if(error.message== 'URL inválida'){
-            window.alert(error.message)
-          }
-        }
-      }
-    }
-  }
-})
-
-// Concatena as partes da URL com subdominio
-function buildUrlSub(url, word){
+function buildURLSub(url, word){
   if (url.includes('https://')){
-    let domainhttps = url.splice(7)
-    return 'https://' + word + domain
+    let domainhttps = url.splice(7);
+    return 'https://' + word + domainhttps;
   }
   else if('http://'){
     let domainhttp = url.splice(6)
-    return 'http://' + word + domainhttp
+    return 'http://' + word + domainhttp;
   }
   else {
-    return url
+    return url;
   }
 }
 
-findDrt.addEventListener('click', () => {
-  if (wordlistDrt.files.length == 0){
-    alert('You must select an wordlist')
-  }
-  else{
-    let url = urlDr.value
-    let request = new XMLHttpRequest()
-    let reader = new FileReader()
-    reader.readAsText(wordlistDrt.files[0])
-    reader.onload = () => {
-      let words = reader.result.split(' ')
-      for (let word of words){
-        finalUrl = buildUrlDiret(url, word)
-        request.open('GET', finalUrl,true)
-        request.onreadystatechange=()=> {
-          if(request.status == 200){
-            let directoryFound = document.createElement('p')
-            directoryFound.innerText = finalUrl
-            diretfDisplay.appendChild(directoryFound)
+function findSubdomain (fullWordList) {
+  let request = new XMLHttpRequest()
+  let url = urlSd.value
+  console.log(fullWordList)
+  let words = fullWordList.split('\n')
+  for (let word of words) {
+    console.log(word)
+    try {
+      finalUrl = buildURLSub(url, word)
+      if (isValidURL()) {
+        request.open('GET', finalUrl, true);
+        request.onreadystatechange = () => {
+          if (request.status == 200) {
+            let subDomainFound = document.createElement('p');
+            subDomainFound.innerText = finalUrl;
+            subDisplay.appendChild(subDomainFound);
           }
         }
-        request.send()
+        request.send();
       }
     }
+    catch (error) {
+      continue;
+    }
   }
-})
+  
+}
 
-function buildUrlDiret(url, word){
+function buildURLDiret (url, word) {
   let lastCaractere = url[url.length-1]
   if (lastCaractere == '/'){
     return `${url}${word}/`
@@ -124,3 +69,56 @@ function buildUrlDiret(url, word){
     return `${url}/${word}/`
   }
 }
+
+function findDirectory (fullWordList) {
+  let request = new XMLHttpRequest()
+  let url = urlDr.value
+  let words = fullWordList.split('\n')
+  for (let word of words) {
+    console.log(word)
+    finalUrl = buildURLDiret(url, word)
+    request.open('GET', finalUrl, true)
+    request.onreadystatechange = () => {
+      if (request.status == 200) {
+        let directoryFound = document.createElement('p')
+        directoryFound.innerText = finalUrl
+        diretfDisplay.appendChild(directoryFound)
+      }
+    }
+    request.send()
+  }
+}
+
+async function readWordlist (identifier){
+  let reader = new FileReader();
+  if (identifier === 'subdomain'){
+    reader.readAsText(wordlistSd.files[0])
+    reader.addEventListener('load', findSubdomain(reader.result))
+  }
+  else {
+    reader.readAsText(wordlistDrt.files[0])
+    reader.addEventListener('load', findDirectory(reader.result))
+  }
+}
+
+// Limpa tela do buscador de subdominios 
+clearSd.addEventListener('click', () => {
+  subDisplay.innerHTML = '';
+})
+
+// Limpa tela do buscador de diretórios
+clearDrt.addEventListener('click', () => {
+  diretfDisplay.innerHTML = '';
+})
+
+// Inicia a busca de subdomínios
+findSd.addEventListener('click', () => {
+  wordlistSd.files.length !== 0? readWordlist('subdomain') : alert('You must select an wordlist')
+})
+
+findDrt.addEventListener('click', () => {
+  wordlistDrt.files.length !== 0? readWordlist('directory') : alert('You must select an wordlist')
+})
+
+
+
