@@ -44,8 +44,8 @@
     background-color: rgb(255, 166, 0);;
 }
 .header__menu__items{
-    display:flex;
-    font-size:1.15em;
+    display: flex;
+    font-size: 1.15em;
 }
 .header__menu__item{
     list-style: none;
