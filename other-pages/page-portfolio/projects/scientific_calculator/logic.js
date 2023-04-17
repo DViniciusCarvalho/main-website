@@ -37,6 +37,13 @@ let display_content = []
 
 numbers.forEach((current_element) => {
   current_element.addEventListener('click', (event) => {
+    if (display_content[display_content.length - 1] == "0" && isNaN(Number(display_content[display_content.length - 2]))){
+      display_content.length -= 1;
+      display.innerHTML = '';
+      display_content.forEach((element) => {
+        display.innerHTML += element;
+      });
+    }
     display.innerHTML += Number(event.target.innerHTML)
     display_content.push(String(event.target.innerHTML))
     changeNumberSignalDot()
@@ -112,6 +119,3 @@ trig_unity.forEach((element) => {
     convertTrigonometricUnit(display_content, display, event.target)
   })
 })
-
-
-

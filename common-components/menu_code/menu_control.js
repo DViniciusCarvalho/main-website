@@ -22,8 +22,3 @@ function closeMenuOnResize(menuContainer, menuButton){
 }
 
 export { openAndCloseMenu, blockTouchMoveOnMenuOpen, blockScrollOnMenuOpen, closeMenuOnResize }
-
-
-
-
-
