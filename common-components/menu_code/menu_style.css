@@ -60,14 +60,14 @@
     max-width: 160px;
 }
 
-.header__menu__item > a{
+.header__menu__item > a {
     display:flex;
     justify-content: center;
     align-items: center;
     height:70px;
     width:13vw;
     text-decoration: none;
-    color:white;
+    color:white; 
     font-weight: 500;
     transition: color .5s, background-color .5s;
 }

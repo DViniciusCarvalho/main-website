@@ -5,7 +5,7 @@ function openAndCloseMenu(menuContainer){
     closeButtonIsHide = (menuContainer.classList.contains('active'))?
         false : true;
 }
-
+ 
 function blockTouchMoveOnMenuOpen(event){
     !closeButtonIsHide? event.preventDefault():"";
 }
