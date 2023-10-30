@@ -102,6 +102,8 @@
     height: 0;
     opacity: 0;
     text-align: justify;
+    word-break: break-all;
+    white-space: pre-wrap;
     text-justify: inter-word;
     line-height: 1.3em;
     color: rgb(216, 214, 214);

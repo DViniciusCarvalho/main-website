@@ -125,6 +125,7 @@
     .header__menu.active .header__menu__item, .header__menu.active .header__menu__item > a{
         display:flex;
         width:100%;
+        max-width: 100%;
     }
     .header__menu.active .header__menu__item > a{
         border-width: 0px 0px 0.01px 0px;

@@ -48,9 +48,18 @@ linkedlnButton.addEventListener("click", () => {
 
 // Download Douglas"s Curriculum Vitae (CV)
 downloadCVButton.addEventListener("click", () => {
-    const filePath = "homepage-file/example.txt";
-    const link = document.createElement("a");
-    link.href = filePath;
-    link.download = "example.txt";   
-    link.click();
+
+    const EXTENSIONS = [
+        "doc", 
+        "odt"
+    ];
+
+    EXTENSIONS.forEach(extension => {
+        const filePath = `homepage-file/curriculo.${extension}`;
+        const link = document.createElement("a");
+        link.href = filePath;
+        link.download = `curriculo.${extension}`;   
+        link.click();
+    });
+
 });
