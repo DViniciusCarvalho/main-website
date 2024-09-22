@@ -50,8 +50,7 @@ linkedlnButton.addEventListener("click", () => {
 downloadCVButton.addEventListener("click", () => {
 
     const EXTENSIONS = [
-        "doc", 
-        "odt"
+        "pdf"
     ];
 
     EXTENSIONS.forEach(extension => {
